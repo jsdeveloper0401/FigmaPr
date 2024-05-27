@@ -1,5 +1,6 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./header.css";
+import { NavLink } from "react-router-dom";
 
 const Header = ({ count, setCount }) => {
     return (
@@ -7,18 +8,14 @@ const Header = ({ count, setCount }) => {
             <nav className="nav">
                 <div className="container header-container">
                     <ul className="nav__list">
-                        <li className="nav__item">
-                            <a
-                                href="https://severyanchka.vercel.app/"
-                                target="_blank"
-                                className="nav__link">
-                                Works
-                            </a>
-                        </li>
+                        <NavLink to="/work" className="nav__item">
+                            Works
+                        </NavLink>
                         <li className="nav__item">
                             <a
                                 href="https://js-blog-abdukarimov-muxriddin.vercel.app/"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="nav__link">
                                 Blog
                             </a>
