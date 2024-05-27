@@ -1,0 +1,62 @@
+import React, { useState } from "react";
+import Header from "./components/header/Header";
+import HeroSection from "./components/hero/HeroSection";
+import RecentPosts from "./components/recentPost/RecentPosts";
+import FeaturedWorks from "./components/feature/FeaturedWorks";
+import Footer from "./components/footer/Footer";
+import { Routes, Route } from "react-router-dom";
+
+import Pretty from "./assets/pretty.png";
+import Malaya from "./assets/malaya.png";
+import Logo from "./assets/logo.png";
+
+const works = [
+    {
+        imgSrc: Pretty,
+        altText: "Design dashboard",
+        title: "Designing Dashboards",
+        year: "2020",
+        type: "Dashboard",
+        description:
+            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+        imgSrc: Malaya,
+        altText: "Vibrant Portraits of 2020",
+        title: "Vibrant Portraits of 2020",
+        year: "2018",
+        type: "Illustration",
+        description:
+            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+        imgSrc: Logo,
+        altText: "36 Days of Malayalam type",
+        title: "36 Days of Malayalam type",
+        year: "2018",
+        type: "Typography",
+        description:
+            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+];
+
+const App = () => {
+    const [count, setCount] = useState(false);
+
+    return (
+        <>
+            <Routes>
+                <Route path="" />
+            </Routes>
+            <Header count={count} setCount={setCount} />
+            <main>
+                <HeroSection />
+                <RecentPosts />
+                <FeaturedWorks works={works} />
+            </main>
+            <Footer />
+        </>
+    );
+};
+
+export default App;
