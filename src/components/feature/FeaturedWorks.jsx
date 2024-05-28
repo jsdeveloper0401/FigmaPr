@@ -18,7 +18,7 @@ const FeaturedWorks = ({ works }) => {
                                 <div className="featured-works__dashboard">
                                     <h3>{work.title}</h3>
                                     <div className="featured-works__desc">
-                                        <span>{work.year}</span>
+                                        <p className="span">{work.year}</p>
                                         <p>{work.type}</p>
                                     </div>
                                     <p>{work.description}</p>
