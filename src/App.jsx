@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/header/Header";
 import HeroSection from "./components/hero/HeroSection";
 import RecentPosts from "./components/recentPost/RecentPosts";
 import FeaturedWorks from "./components/feature/FeaturedWorks";
 import Footer from "./components/footer/Footer";
-import { Routes, Route } from "react-router-dom";
+import Work from "./components/navbar/work";
+import Blog from "./components/navbar/blog";
+import Contact from "./components/navbar/contact";
 
 import Pretty from "./assets/pretty.png";
 import Malaya from "./assets/malaya.png";
@@ -42,18 +45,23 @@ const works = [
 
 const App = () => {
     const [count, setCount] = useState(false);
+    const location = useLocation();
 
     return (
         <>
-            <Routes>
-                <Route path="" />
-            </Routes>
             <Header count={count} setCount={setCount} />
-            <main>
-                <HeroSection />
-                <RecentPosts />
-                <FeaturedWorks works={works} />
-            </main>
+            <Routes>
+                <Route path="/work" element={<Work />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+            {location.pathname === "/" && (
+                <main>
+                    <HeroSection />
+                    <RecentPosts />
+                    <FeaturedWorks works={works} />
+                </main>
+            )}
             <Footer />
         </>
     );

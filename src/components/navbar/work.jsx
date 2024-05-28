@@ -1,11 +1,10 @@
-import React from 'react'
-
 const Work = () => {
-  return (
-    <div>
-      <h1>Work</h1>
-    </div>
-  )
-}
+    return (
+        <div>
+            <h2>Work</h2>
+            <p>Welcome to the Work page.</p>
+        </div>
+    );
+};
 
-export default Work
+export default Work;
